@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Auto Bot Ads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #e68900;
+        }
+    </style>
+    <script src='//whephiwums.com/sdk.js' data-zone='9140211' data-sdk='show_9140211'></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Pro Automatic Ad Bot</h1>
+        <p>Ads will run automatically and restart after closing.</p>
+        <button onclick="showRewardAd()">Watch Ad for Reward</button>
+    </div>
+    
+    <script>
+        function runAds() {
+            show_9140211({ 
+                type: 'inApp', 
+                inAppSettings: { 
+                    frequency: 2,
+                    capping: 0.1,
+                    interval: 30,
+                    timeout: 5,
+                    everyPage: false
+                }
+            }).then(() => {
+                setTimeout(runAds, 30000); // Auto show new ad after 30 seconds
+            });
+        }
+        
+        function showRewardAd() {
+            show_9140211().then(() => {
+                setTimeout(showRewardAd, 30000); // Auto show new rewarded ad after 30 seconds
+            });
+        }
+        
+        runAds();
+    </script>
+</body>
+</html>
